@@ -6,3 +6,5 @@ const scrapedDataSchema = new Schema({
 });
 
 export default model('ScrapedData', scrapedDataSchema);
+
+

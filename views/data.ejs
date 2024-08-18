@@ -2,13 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title><%= data.name %></title>
+  <title>Data</title>
 </head>
 <body>
-  <h1>Data for <%= data.name %></h1>
-  <pre><%= data.data %></pre>
-  <a href="/collection">Back to Collection</a>
-  <button onclick="Clerk.signOut()">Sign Out</button>
-  <script src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest"></script>
+  <h1>Scraped Data</h1>
+  <a href="/collections.html">Back to Collection</a>
+  <div>
+    <h2><%= data.name %></h2>
+    <pre><%= data.data %></pre>
+  </div>
 </body>
 </html>
+
+
+
+
+

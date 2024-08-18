@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scraped Data Collections</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .box {
+      width: 200px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #000;
+      border-radius: 10px;
+      text-align: center;
+      background-color: #f0f0f0;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .box:hover {
+      background-color: #ddd;
+      transform: scale(1.05);
+    }
+    a {
+      text-decoration: none;
+      color: #000;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Scraped Data Collections</h2>
+  <div class="container" id="collections">
+    <!-- This will be populated with the list of collections -->
+  </div>
+  <script>
+    async function fetchCollections() {
+      const response = await fetch('/collections');
+      const collections = await response.json();
+      const collectionsDiv = document.getElementById('collections');
+      collections.forEach(collection => {
+        const div = document.createElement('div');
+        div.className = 'box';
+        const link = document.createElement('a');
+        link.href = `/collection/${collection.name}`;
+        link.textContent = collection.name;
+        div.appendChild(link);
+        collectionsDiv.appendChild(div);
+      });
+    }
+
+    fetchCollections();
+  </script>
+</body>
+</html>
+
+
