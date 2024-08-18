@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Collection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .box {
+      width: 150px;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #000;
+      border-radius: 10px;
+      text-align: center;
+      background-color: #f0f0f0;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .box:hover {
+      background-color: #ddd;
+      transform: scale(1.05);
+    }
+    a {
+      text-decoration: none;
+      color: #000;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Scraped Data Collection</h1>
+  <a href="/">Scrape another Website</a>
+  <div class="container">
+    <% data.forEach(item => { %>
+      <% if (item.name) { %>
+        <div class="box">
+          <a href="/collection/<%= item.name %>"><%= item.name %></a>
+        </div>
+      <% } %>
+    <% }) %>
+  </div>
+</body>
+</html>
