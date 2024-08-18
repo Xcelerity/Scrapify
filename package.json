@@ -1,0 +1,1 @@
+{"name":"scrapify","version":"1.0.0","description":"best web scraper","main":"app.js","type":"module","scripts":{"start":"node app.js","dev":"nodemon app.js"},"dependencies":{"body-parser":"^1.20.2","dotenv":"^16.4.5","ejs":"^3.1.10","express":"^4.19.2","mongoose":"^8.5.3","node":"^22.6.0","selenium-webdriver":"^4.23.0"},"devDependencies":{"nodemon":"^3.1.4"}}
