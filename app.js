@@ -13,7 +13,8 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const uri = process.env.MONGODB_URI;
+const uri = "mongodb+srv://hack1046:hackathon1@cluster0.inrek.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
