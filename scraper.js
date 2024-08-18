@@ -1,7 +1,16 @@
 import { Builder, By, until } from 'selenium-webdriver';
+import chrome from 'selenium-webdriver/chrome.js';
 
 export async function scrapeData(url) {
-  let driver = await new Builder().forBrowser('chrome').build();
+ 
+  let options = new chrome.Options();
+  options.addArguments('--headless'); 
+  options.addArguments('--disable-gpu'); 
+  options.addArguments('--no-sandbox'); 
+  options.addArguments('--disable-dev-shm-usage'); 
+
+  
+  let driver = await new Builder().forBrowser('chrome').setChromeOptions(options).build();
 
   try {
     await driver.get(url);
@@ -15,5 +24,7 @@ export async function scrapeData(url) {
     await driver.quit();
   }
 }
+
+
 
 
