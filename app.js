@@ -38,6 +38,10 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(join(__dirname, 'public')));
 
+app.get('/', (req, res) => {
+  res.render('home');
+});
+
 app.use('/', indexRouter);
 
 app.listen(3000, () => {
@@ -45,10 +49,3 @@ app.listen(3000, () => {
 });
 
 export { client };
-
-
-
-
-
-
-
